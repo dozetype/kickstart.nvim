@@ -7,15 +7,15 @@ local plugins = {
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' }, -- optional, for icons
-    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },   -- lazy load on command
+    cmd = { 'NvimTreeToggle', 'NvimTreeFindFile' }, -- lazy load on command
     keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle File Tree" },
+      { '<leader>e', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle File Tree' },
     },
     config = function()
-      require("nvim-tree").setup {
+      require('nvim-tree').setup {
         view = {
           width = 30,
-          side = "left",
+          side = 'left',
         },
         renderer = {
           icons = {
@@ -28,19 +28,20 @@ local plugins = {
           },
         },
         filters = {
-          dotfiles = false,
+          dotfiles = true,
         },
       }
     end,
   },
   {
-    "stevearc/overseer.nvim",
+    'stevearc/overseer.nvim',
     opts = {},
     keys = {
-      { "<leader>tt", "<cmd>OverseerToggle<CR>", desc = "Toggle Tasks" },
-      { "<leader>tr", "<cmd>OverseerRun<CR>", desc = "Run Task" },
+      { '<leader>tt', '<cmd>OverseerToggle<CR>', desc = 'Toggle Tasks' },
+      { '<leader>tr', '<cmd>OverseerRun<CR>', desc = 'Run Task' },
     },
-  }
+  },
 }
 
 return plugins
+
